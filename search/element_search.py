@@ -1,6 +1,7 @@
 # Searching an element in a list/array in python
 
 # Simplest way of searching an element in array
+import timeit
 
 arr = [2, 4, 6, 8, 10, 100, 34]
 
@@ -16,7 +17,10 @@ def elementSearch(element, arr):
 # Prints Location of the element (8 in this case) if
 # present in arr
 #else prints None
-print elementSearch(8, arr)
+print elementSearch(78, arr)
+
+t1 = timeit.timeit('elementSearch(78, arr)',setup='from __main__ import elementSearch, arr')
+print "elementSearch Function took {} seconds to run".format(t1)
 
 # Analysis of this Algorithm:
 # O(1) >> No Iterations and always only one operation
