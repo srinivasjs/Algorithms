@@ -33,8 +33,8 @@ print linearSearch(arr, 78)
 
 t1 = timeit.timeit('linearSearch(arr, 78)',setup='from __main__ import linearSearch, arr')
 print "linearSearch Function took {} seconds to run".format(t1)
-# Analysis of this Algorithm:
 
+# Analysis of this Algorithm:
 # Since, looping is involved here, O(n)
 # is the Time Complexity of this algorithm
 # Takes "n" iterations for finding the element
