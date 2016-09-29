@@ -11,8 +11,7 @@ def elementSearch(element, arr):
     """
     if element in arr:
         return arr.index(element)+1
-    else:
-        return None
+    return None
 
 # Prints Location of the element (8 in this case) if
 # present in arr
