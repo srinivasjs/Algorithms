@@ -1,0 +1,20 @@
+Celery is a Distributed System to process vast amounts of messages. It is a Task Queue, that also supports Task Scheduling
+
+Task Queue:
+
+A Task Queue distributes work across multiple threads/machines . A Task Queue takes in a unit of work called Task .
+Dedicated Worker Processes constantly monitor Task Queues for new work to perform.
+
+Celery communicates via messages, usually using a Broker such as RabbitMQ . A client adds message (a unit of Work), 
+which the Broker delivers it to a Worker
+
+A Celery system can contain multiple Brokers and Workers supporting High Availibility and Horizontal Scaling .
+
+Note : Horizontal scaling means that you scale by adding more machines into your pool of resources. (Source WIKI)
+
+Celery can run on a single machine, or multiple machines, or even across Data Centers
+
+Clients and Workers will automatically retry in case of Failures/ connection loss thus enabling HA . Brokers, such
+as RabbitMQ support HA in the form of Master/Master or Master/Slave Replication
+
+Source : http://docs.celeryproject.org/en/latest/getting-started/introduction.html
