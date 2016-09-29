@@ -81,11 +81,17 @@ print "binarySearch Recursive Function took {} seconds to run".format(t1)
 # is the Time Complexity of this algorithm
 
 
-#Time it took to search "10" element : 
+# Time it took to search "10" element : 
 
-4
-binarySearch Function took 0.245880126953 seconds to run
-4
-binarySearch Recursive Function took 0.238392114639 seconds to run
+# 4
+# binarySearch Function took 0.245880126953 seconds to run
+# 4
+# binarySearch Recursive Function took 0.238392114639 seconds to run
 
-    
+# Time it took to search "100000"(not present in array) :
+
+# None
+# binarySearch Function took 0.738080978394 seconds to run
+# None
+# binarySearch Recursive Function took 1.08194184303 seconds to run
+
