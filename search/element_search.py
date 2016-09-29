@@ -19,7 +19,9 @@ def elementSearch(element, arr):
 #else prints None
 print elementSearch(8, arr)
 
-
+# Analysis of this Algorithm:
+# O(1) >> No Iterations and always only one operation
+# i.e. "if element in arr:"
 
 # Enhancements that can be done
 # element passed as an args to function elementSearch
