@@ -33,6 +33,10 @@ print "linearSearch took {} seconds to run".format(end-start)
 # Takes "n" iterations for finding the element
 # if present at last index (or) no element in
 # array/List
+# Best run time would be if the element to be searched
+# is in First index itself
+# Worst case being the element to be serched not present
+# in array
 
 # Note :
 # range has been upgraded to xrange()
