@@ -2,7 +2,7 @@
 # List implementation in Python
 # If x is present then return its location
 # else return None
-import timeit
+import time
 
 arr = [1, 4, 7, 9, 23, 46, 78]
 
@@ -22,17 +22,10 @@ def linearSearch(arr, element):
 
 	return None
 
-print linearSearch(arr, 78)
-
-# Using timeit function to analyze the
-# time taken to execute a function
-# This enables us to measure time taken
-# to execute a function/code by implementing
-# different Algorithm
-# Which enables us to evaluate Big Order O(n)
-
-t1 = timeit.timeit('linearSearch(arr, 78)',setup='from __main__ import linearSearch, arr')
-print "linearSearch Function took {} seconds to run".format(t1)
+start = time.time()
+retval = linearSearch(arr, 78)
+end = time.time()
+print "linearSearch took {} seconds to run".format(end-start)
 
 # Analysis of this Algorithm:
 # Since, looping is involved here, O(n)
