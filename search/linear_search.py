@@ -45,3 +45,21 @@ print "linearSearch took {} seconds to run".format(end-start)
 # very large amount of memory when producing 
 # a lot of numbers. However it tends to be 
 # quicker with a small amount of numbers.
+
+# Recursive Implementation of Algorithm
+
+def search(l,key,idx=0):
+
+    if l:   # checks if list exists
+        if l[0] == key:     
+            return idx
+
+        s = search(l[1:], key, (idx + 1))
+        if s is not False:          
+            return s
+
+    return False 
+
+print search([2, 100, 32, 45, 10], 45)
+
+# But, Recursive algorithms are always of Exponential Time Order
