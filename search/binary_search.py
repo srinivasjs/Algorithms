@@ -2,7 +2,7 @@
 # Iterative Binary Search Function
 # It returns location of element in given array arr if present,
 # else returns None
-import timeit
+import time
 
 arr = [2, 4, 6, 8, 10, 200, 324, 345, 290]
 
@@ -23,17 +23,18 @@ def binarySearch(arr, l, r, element):
 	
 	return None
 
+start = time.time()
 print binarySearch(arr, 0, len(arr)-1, 10)
+end = time.time()
 
-# Using timeit function to analyze the
+# Using time function to analyze the
 # time taken to execute a function
 # This enables us to measure time taken
 # to execute a function/code by implementing
 # different Algorithm
 # Which enables us to evaluate Big Order O(n)
 
-t1 = timeit.timeit('binarySearch(arr, 0, len(arr)-1, 10)',setup='from __main__ import binarySearch, arr')
-print "binarySearch Function took {} seconds to run".format(t1)
+print "binarySearch took {} seconds to run".format(end-start)
 
 # Analysis of this Algorithm:
 # Since, Divide and Conquer Method is used, O(logn)
@@ -44,7 +45,7 @@ print "binarySearch Function took {} seconds to run".format(t1)
 # Python Program for recursive binary search.
 
 # Returns index of element in arr if present, else None
-import timeit
+import time
 
 def binarySearch (arr, l, r, element):
 
@@ -66,32 +67,5 @@ def binarySearch (arr, l, r, element):
 
 print binarySearch(arr, 0, len(arr)-1, 10)
 
-# Using timeit function to analyze the
-# time taken to execute a function
-# This enables us to measure time taken
-# to execute a function/code by implementing
-# different Algorithm
-# Which enables us to evaluate Big Order O(n)
-
-t1 = timeit.timeit('binarySearch(arr, 0, len(arr)-1, 10)',setup='from __main__ import binarySearch, arr')
-print "binarySearch Recursive Function took {} seconds to run".format(t1)
-
-# Analysis of this Algorithm:
-# Since, Divide and Conquer Method is used, O(logn)
-# is the Time Complexity of this algorithm
-
-
-# Time it took to search "10" element : 
-
-# 4
-# binarySearch Function took 0.245880126953 seconds to run
-# 4
-# binarySearch Recursive Function took 0.238392114639 seconds to run
-
-# Time it took to search "100000"(not present in array) :
-
-# None
-# binarySearch Function took 0.738080978394 seconds to run
-# None
-# binarySearch Recursive Function took 1.08194184303 seconds to run
+print "binarySearch Recursive Algorithm too {} seconds to run".format(end-start)
 
