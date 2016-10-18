@@ -1,10 +1,10 @@
 # Implementation of Selection Sort
-import timeit
+import time
 
 A = [4, 3, 2, 5, 1]
 
 def selectionSort():
-    for i in range(len(A)):
+    for i in range(len(A)-1):
 	
 	    min_elem_idx = i
 	    for j in range(i+1, len(A)):
@@ -13,14 +13,14 @@ def selectionSort():
 			
 	    A[i], A[min_elem_idx] = A[min_elem_idx], A[i]
 	    
-print "Array/List before sort : {}".format(A)
-print timeit.timeit("selectionSort()", setup="from __main__ import selectionSort, A")
-print "Array/List after sort : {}".format(A)
+start = time.time()
+selectionSort()
+end = time.time()
 
-# output
-# Array/List before sort : [4, 3, 2, 5, 1]
-# 2.70688509941
-# Array/List after sort : [1, 2, 3, 4, 5]
+print "Time taken to run selectionSort is {} seconds".format(end-start)
 
 # Analysis of this Algorithm:
 # Time Complexity  :  O(n*n) >> Since, 2 loops are used 
+
+# SelectionSort is an inplace Algorithm i.e. it does not
+# use extra auxillary memory
