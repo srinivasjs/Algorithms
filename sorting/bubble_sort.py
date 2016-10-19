@@ -1,5 +1,5 @@
 # Python program for implementation of Bubble Sort
-import timeit
+import time
 
 arr = [2, 7, 4, 1, 5, 3]
 length = len(arr)
@@ -10,13 +10,13 @@ def bubbleSort():
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
         
-t1 = timeit.timeit("bubbleSort()", setup="from __main__ import arr, length, bubbleSort")
-print "bubbleSort took {} seconds to sort".format(t1)
-print "Sorted list : {}".format(arr)
+start = time.time()
+bubbleSort()
+end = time.time()
+print "bubbleSort took {} seconds to run".format(end-start)
 
 # output
-# bubbleSort took 2.60335898399 seconds to sort
-# Sorted list : [1, 2, 3, 4, 5, 7]
+# bubbleSort took 1.31130218506e-05 seconds to run
 
 # Analysis of this Algorithm :
 # The Time complexity is O(n*n)
@@ -24,12 +24,6 @@ print "Sorted list : {}".format(arr)
 # But, this Algorithm can be tweaked to give a best case to see if it is already sorted then let's not run it.
 
 # Implementation with Flag to avoid run when already sorted :
-
-# Python program for implementation of Bubble Sort
-import timeit
-
-arr = [1, 2, 3, 4, 5, 7]  # Already sorted List
-length = len(arr)
 
 def bubbleSort():
     for i in range(length-1):
@@ -40,13 +34,9 @@ def bubbleSort():
         if flag==0:
             break
         
-t1 = timeit.timeit("bubbleSort()", setup="from __main__ import arr, length, bubbleSort")
-print "bubbleSort took {} seconds to sort".format(t1)
-print "Sorted list : {}".format(arr)
-
-# output
-# bubbleSort took 0.958528995514 seconds to sort
-# Sorted list : [1, 2, 3, 4, 5, 7]
+# The effect of above algorithm with flag could be seen if array given is already sorted
 
 # Analysis of this Algorithm :
 # The Time complexity is O(n)   # >> Best Case 
+
+# bubbleSort is an in-place and stable Algorithm
