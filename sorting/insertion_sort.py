@@ -1,27 +1,28 @@
 # Implementation of insertion sort in python
 
-import timeit
+import time
 
 def insertionSort(arr):
-    for i in range(1, len(arr)):
-        key = arr[i]
-        j=i-1
-        while j>=0 and key<arr[j]:
+    for i in range(0, len(arr)):
+        value = arr[i]
+        j = i-1
+        while (j>=0 and value<arr[j]):
             arr[j+1] = arr[j]
             j-=1
-        arr[j+1] = key
+        arr[j+1] = value
 
-arr = [23, 4, 12, 6, 21, 5]
-t1 = timeit.timeit('insertionSort(arr)', setup='from __main__ import insertionSort, arr')
-print 'insertionSort took {} seconds to execute'.format(t1)
-print 'sorted list {}'.format(arr)
+arr = [7, 2, 4, 1, 5, 3]
+start = time.time()
+insertionSort(arr)
+end = time.time()
+print "insertionSort executed in {} seconds".format(end-start)
 
 # output
-# insertionSort took 0.967344045639 seconds to execute
-# sorted list [4, 5, 6, 12, 21, 23]
+# insertionSort executed in 7.86781311035e-06 seconds
+# [1, 2, 3, 4, 5, 7]
+
 
 # Analysis of this Algorithm :
 # The Time complexity is O(n*n)
 
-# Time complexity of this algorithm is considered to be O(n*n)
 # Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time O(n) when #elements are already sorted.
